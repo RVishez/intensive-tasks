@@ -5,15 +5,31 @@ package com.walking.intensive.chapter1.task1;
  */
 public class Task1 {
     public static void main(String[] args) {
-//        Для собственных проверок можете делать любые изменения в этом методе
-        int age = 0;
 
+        int age = 0;
+/*        Для собственных проверок можете делать любые изменения в этом методе
+        int[] ages = new int[128];
+        for (int i = 0; i < ages.length; i++) {
+            ages[i] = i;
+            System.out.println(getAgeString(i));
+        }
+
+ */
         System.out.println(getAgeString(age));
     }
 
     static String getAgeString(int age) {
 //        Место для вашего кода
+        String ageWord;
 
-        return null; // Заглушка. При реализации - удалить
+        if (((age + 100) % 100 >= 11 && (age + 100) % 100 <= 19)) {
+            ageWord = "лет";
+        } else if (((age + 10) % 10) == 1) {
+            ageWord = "год";
+        } else if ((age + 10) % 10 > 1 && (age + 10) % 10 < 5) {
+            ageWord = "года";
+        } else ageWord = "лет";
+        //ff
+        return ("Вам " + age + " " + ageWord); // Заглушка. При реализации - удалить
     }
 }
